@@ -3,7 +3,7 @@
 @rem   winpcap, specifically, the winpcap developer pack
 
 @setlocal
-@set MYCOMPILE=cl /nologo /MD /O2 /W3 /c /D_CRT_SECURE_NO_DEPRECATE
+@set MYCOMPILE=cl /nologo /MT /O2 /W3 /c /D_CRT_SECURE_NO_DEPRECATE
 @set MYLINK=link /nologo
 @set MYMT=mt /nologo
 
