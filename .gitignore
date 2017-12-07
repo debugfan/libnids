@@ -56,3 +56,4 @@ Debug
 *.exp
 libnet-1.2-rc3/src/libnet.dll
 libnet-1.2-rc3/src/libnet.lib
+Release

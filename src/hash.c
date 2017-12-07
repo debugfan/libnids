@@ -5,6 +5,13 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+#ifdef _MSC_VER
+#include <io.h>
+#define open _open
+#define read _read
+#define close _close
+#endif
+
 static u_char xor[12];
 static u_char perm[12];
 static void

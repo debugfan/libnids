@@ -8,7 +8,7 @@
 #define HAVE_INTTYPES_H 1
 
 /* Define to 1 if you have the `gthread-2.0' library (-lgthread-2.0). */
-#define HAVE_LIBGTHREAD_2_0 1
+//#define HAVE_LIBGTHREAD_2_0 1
 
 /* Define to 1 if you have the `nsl' library (-lnsl). */
 #define HAVE_LIBNSL 1

@@ -6,6 +6,16 @@
 #ifndef _NIDS_UTIL_H
 #define _NIDS_UTIL_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif  /* __cplusplus */
+
+#ifdef _MSC_VER
+#ifndef inline
+#define inline __inline
+#endif
+#endif
+
 #define mknew(x)	(x *)test_malloc(sizeof(x))
 #define b_comp(x,y)	(!memcmp(&(x), &(y), sizeof(x)))
 
@@ -37,5 +47,9 @@ after(u_int seq1, u_int seq2)
 {
   return ((int)(seq2 - seq1) < 0);
 }
+
+#ifdef __cplusplus
+}
+#endif  /* __cplusplus */
 
 #endif /* _NIDS_UTIL_H */
