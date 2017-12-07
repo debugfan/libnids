@@ -151,33 +151,33 @@ struct tcp_timeout
   struct tcp_timeout *prev;
 };
 
-int nids_init (void);
-void nids_register_ip_frag (void (*));
-void nids_unregister_ip_frag (void (*));
-void nids_register_ip (void (*));
-void nids_unregister_ip (void (*));
-void nids_register_tcp (void (*));
-void nids_unregister_tcp (void (*x));
-void nids_register_udp (void (*));
-void nids_unregister_udp (void (*));
-void nids_killtcp (struct tcp_stream *);
-void nids_discard (struct tcp_stream *, int);
-int nids_run (void);
-void nids_exit(void);
-int nids_getfd (void);
-int nids_dispatch (int);
-int nids_next (void);
-void nids_pcap_handler(u_char *, struct pcap_pkthdr *, u_char *);
-struct tcp_stream *nids_find_tcp_stream(struct tuple4 *);
-void nids_free_tcp_stream(struct tcp_stream *);
+LIBNIDS_API int nids_init(void);
+LIBNIDS_API void nids_register_ip_frag(void(*));
+LIBNIDS_API void nids_unregister_ip_frag(void(*));
+LIBNIDS_API void nids_register_ip(void(*));
+LIBNIDS_API void nids_unregister_ip(void(*));
+LIBNIDS_API void nids_register_tcp(void(*));
+LIBNIDS_API void nids_unregister_tcp(void(*x));
+LIBNIDS_API void nids_register_udp(void(*));
+LIBNIDS_API void nids_unregister_udp(void(*));
+LIBNIDS_API void nids_killtcp(struct tcp_stream *);
+LIBNIDS_API void nids_discard(struct tcp_stream *, int);
+LIBNIDS_API int nids_run(void);
+LIBNIDS_API void nids_exit(void);
+LIBNIDS_API int nids_getfd(void);
+LIBNIDS_API int nids_dispatch(int);
+LIBNIDS_API int nids_next(void);
+LIBNIDS_API void nids_pcap_handler(u_char *, struct pcap_pkthdr *, u_char *);
+LIBNIDS_API struct tcp_stream *nids_find_tcp_stream(struct tuple4 *);
+LIBNIDS_API void nids_free_tcp_stream(struct tcp_stream *);
 
-extern struct nids_prm nids_params;
-extern char *nids_warnings[];
-extern char nids_errbuf[];
-extern struct pcap_pkthdr *nids_last_pcap_header;
-extern u_char *nids_last_pcap_data;
-extern u_int nids_linkoffset;
-extern struct tcp_timeout *nids_tcp_timeouts;
+LIBNIDS_API extern struct nids_prm nids_params;
+LIBNIDS_API extern char *nids_warnings[];
+LIBNIDS_API extern char nids_errbuf[];
+LIBNIDS_API extern struct pcap_pkthdr *nids_last_pcap_header;
+LIBNIDS_API extern u_char *nids_last_pcap_data;
+LIBNIDS_API extern u_int nids_linkoffset;
+LIBNIDS_API extern struct tcp_timeout *nids_tcp_timeouts;
 
 struct nids_chksum_ctl {
 	u_int netaddr;
@@ -185,7 +185,7 @@ struct nids_chksum_ctl {
 	u_int action;
 	u_int reserved;
 };
-extern void nids_register_chksum_ctl(struct nids_chksum_ctl *, int);
+LIBNIDS_API extern void nids_register_chksum_ctl(struct nids_chksum_ctl *, int);
 
 # ifdef __cplusplus
 }
