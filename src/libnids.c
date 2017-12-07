@@ -728,7 +728,11 @@ int nids_getfd()
 	strcpy(nids_errbuf, "Libnids not initialized");
 	return -1;
     }
+#ifndef WIN32    
     return pcap_get_selectable_fd(desc);
+#else
+    return -1;
+#endif
 }
 
 int nids_next()
