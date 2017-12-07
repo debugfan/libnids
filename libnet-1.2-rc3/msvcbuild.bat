@@ -8,7 +8,7 @@
 @set MYMT=mt /nologo
 
 @rem relative to C code in src/
-@set WINPCAP=..\..\..\WpdPack
+@set WINPCAP=..\..\WpdPack_4_1_2\WpdPack
 
 copy win32\libnet.h include\
 copy win32\stdint.h include\libnet\
