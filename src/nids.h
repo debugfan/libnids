@@ -7,15 +7,25 @@
 # define _NIDS_NIDS_H
 
 # include <sys/types.h>
+#ifndef WIN32
 #include <netinet/in_systm.h>
 #include <netinet/in.h>
 # include <netinet/ip.h>
 # include <netinet/tcp.h>
+#endif
 # include <pcap.h>
 
 # ifdef __cplusplus
 extern "C" {
 # endif
+
+#ifdef WIN32
+#ifdef LIBNIDS_EXPORTS
+#define LIBNIDS_API __declspec(dllexport)
+#else
+#define LIBNIDS_API __declspec(dllimport)
+#endif
+#endif
 
 # define NIDS_MAJOR 1
 # define NIDS_MINOR 24
